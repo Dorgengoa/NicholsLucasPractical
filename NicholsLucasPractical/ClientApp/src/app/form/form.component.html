@@ -4,17 +4,31 @@
 <p>This component demonstrates fetching data from the server.</p>
 
 
-<form method="post">
+<form action="" (ngSubmit)="onSubmit()">
   Submitting AUN:<br />
-  <input type="number" name="Submitting AUN" value="" /><br />
+  <input class="form-control" required
+         pattern="[0-9]{9}" type="number"
+         name="Submitting AUN" [(ngModel)]="template.SubmittingAUN"
+         #submittingAUN="ngModel" ngModel/><br />
+
+  <div *ngIf="submittingAUN.invalid && (submittingAUN.dirty || submittingAUN.touched)" class="alert alert-danger">
+    <div *ngIf="submittingAUN.errors.required">
+      Submitting AUN is required
+    </div>
+    <div *ngIf="submittingAUN.errors.pattern">
+      The submitting AUN must be 9 characters long.
+    </div>
+  </div>
+
+
   School Year Date:<br />
-  <input type="date" name="SchoolYearDate" value="" /><br /><br />
+  <input type="date" name="SchoolYearDate" [(ngModel)]="template.SchoolYearDate" ngModel/><br /><br />
   PA Secure ID:<br />
-  <input type="number" name="PASecureID" value="" /><br /><br />
+  <input type="number" name="PASecureID" [(ngModel)]="template.PASecureID" ngModel/><br /><br />
   Reporting Date:<br />
-  <input type="date" name="ReportingDate" value="" /><br /><br />
+  <input type="date" name="ReportingDate" [(ngModel)]="template.ReportingDate" ngModel/><br /><br />
   ACT16 Fund Category:<br />
-  <input type="number" name="ACT16FundCategory" value="" /><br /><br />
-  <input type="submit" value="Submit" class="submit" />
+  <input type="number" name="ACT16FundCategory" [(ngModel)]="template.ACT16FundCategory" ngModel/><br /><br />
+  <input type="submit" class="submit" />
 </form>
 

@@ -8,8 +8,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace NicholsLucasPractical.Controllers
 {
-    public class FormController : Controller
+    [ApiController]
+    [Route("[controller]")]
+    public class FormController : ControllerBase
     {
+        int x = 0;
+
         [HttpPost]
         public IActionResult Index(int submittingAUN)
         {
