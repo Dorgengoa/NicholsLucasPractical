@@ -5,30 +5,93 @@
 
 
 <form action="" (ngSubmit)="onSubmit()">
-  Submitting AUN:<br />
-  <input class="form-control" required
-         pattern="[0-9]{9}" type="number"
-         name="Submitting AUN" [(ngModel)]="template.SubmittingAUN"
-         #submittingAUN="ngModel" ngModel/><br />
-
-  <div *ngIf="submittingAUN.invalid && (submittingAUN.dirty || submittingAUN.touched)" class="alert alert-danger">
-    <div *ngIf="submittingAUN.errors.required">
-      Submitting AUN is required
-    </div>
-    <div *ngIf="submittingAUN.errors.pattern">
-      The submitting AUN must be 9 characters long.
+  <div class="form-group">
+    <label for="submittingAUN">Submitting AUN:</label>
+    <input class="form-control" id="submittingAUN"
+           pattern="[0-9]{9}" type="number" required
+           name="Submitting AUN" [(ngModel)]="template.SubmittingAUN"
+           #submittingAUN="ngModel" ngModel
+           placeholder="Submitting AUN" />
+    <small class="form-text text-muted">Unique, 9-digit AUN assigned by PDE</small>
+    <div *ngIf="submittingAUN.invalid && (submittingAUN.dirty || submittingAUN.touched)" class="alert alert-danger">
+      <div *ngIf="submittingAUN.errors.required">
+        Submitting AUN is required
+      </div>
+      <div *ngIf="submittingAUN.errors.pattern">
+        The submitting AUN must be 9 numbers long
+      </div>
     </div>
   </div>
 
+  <div class="form-group">
+    <label for="schoolYearDate">School year date:</label>
+    <input class="form-control" id="schoolYearDate"
+           type="date" required
+           name="SchoolYearDate" [(ngModel)]="template.SchoolYearDate"
+           #schoolYearDate="ngModel" ngModel
+           placeholder="School Year Date" />
+    <small class="form-text text-muted">
+      A single date (June 30), the last day of the current school year indicating the whole school year.
+    </small>
+    <div *ngIf="schoolYearDate.invalid && (schoolYearDate.dirty || schoolYearDate.touched)" class="alert alert-danger">
+      <div *ngIf="schoolYearDate.errors.required">
+        School year date is required
+      </div>
+    </div>
+  </div>
 
-  School Year Date:<br />
-  <input type="date" name="SchoolYearDate" [(ngModel)]="template.SchoolYearDate" ngModel/><br /><br />
-  PA Secure ID:<br />
-  <input type="number" name="PASecureID" [(ngModel)]="template.PASecureID" ngModel/><br /><br />
-  Reporting Date:<br />
-  <input type="date" name="ReportingDate" [(ngModel)]="template.ReportingDate" ngModel/><br /><br />
-  ACT16 Fund Category:<br />
-  <input type="number" name="ACT16FundCategory" [(ngModel)]="template.ACT16FundCategory" ngModel/><br /><br />
-  <input type="submit" class="submit" />
+  <div class="form-group">
+    <label for="PASecureID">PAsecureID:</label>
+    <input class="form-control" id="PASecureID"
+           pattern="[0-9]{9}" type="number" required
+           name="PASecureID" [(ngModel)]="template.PASecureID"
+           #PASecureID="ngModel" ngModel
+           placeholder="PA Secure ID" />
+    <small class="form-text text-muted">Unique, 10-digit PAsecureID assigned to the student</small>
+    <div *ngIf="PASecureID.invalid && (PASecureID.dirty || PASecureID.touched)" class="alert alert-danger">
+      <div *ngIf="PASecureID.errors.required">
+        PAsecureID is required
+      </div>
+      <div *ngIf="PASecureID.errors.pattern">
+        The PAsecureID must be 10 numbers long
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="reportingDate">Reporting Date:</label>
+    <input class="form-control" id="reportingDate"
+           type="date" required
+           name="ReportingDate" [(ngModel)]="template.ReportingDate"
+           #reportingDate="ngModel" ngModel
+           placeholder="Reporting Date" />
+    <small class="form-text text-muted">
+      The last day of the current school year.
+    </small>
+    <div *ngIf="reportingDate.invalid && (reportingDate.dirty || reportingDate.touched)" class="alert alert-danger">
+      <div *ngIf="reportingDate.errors.required">
+        Reporting date is required
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="ACT16FundCategory">ACT16 Fund Category:</label>
+    <input class="form-control" id="ACT16FundCategory"
+           pattern="[1-4]{1}" type="number" required
+           name="ACT16FundCategory" [(ngModel)]="template.ACT16FundCategory"
+           #ACT16FundCategory="ngModel" ngModel
+           placeholder="ACT16 Fund Category" />
+    <small class="form-text text-muted">Act16 Fund Category Code</small>
+    <div *ngIf="ACT16FundCategory.invalid && (ACT16FundCategory.dirty || ACT16FundCategory.touched)" class="alert alert-danger">
+      <div *ngIf="ACT16FundCategory.errors.required">
+        Act16 Fund Category is required
+      </div>
+      <div *ngIf="ACT16FundCategory.errors.pattern">
+        The ACT16 Fund Category must be a value 1-4
+      </div>
+    </div>
+  </div>
+
 </form>
 
