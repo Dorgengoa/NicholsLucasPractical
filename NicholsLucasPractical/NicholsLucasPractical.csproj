@@ -29,10 +29,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\csv\csv.component.ts" />
     <None Remove="ClientApp\src\app\form\form.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\csv\csv.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\form\form.component.ts" />
   </ItemGroup>
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
+using CsvHelper.Configuration;
 
 namespace NicholsLucasPractical
 {
@@ -25,5 +26,13 @@ namespace NicholsLucasPractical
 
         public int ACT16FundCategory { get; set; }
 
+    }
+    public sealed class StudentFactTemplateMap : ClassMap<StudentFactTemplate>
+    {
+        public StudentFactTemplateMap()
+        {
+            AutoMap();
+            Map(m => m.ID).Ignore();
+        }
     }
 }

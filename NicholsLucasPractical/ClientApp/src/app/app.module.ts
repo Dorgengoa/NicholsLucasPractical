@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { FormComponent } from './form/form.component';
+import { CSVComponent } from './csv/csv.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormComponent } from './form/form.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    FormComponent
+    FormComponent,
+    CSVComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,6 +30,7 @@ import { FormComponent } from './form/form.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'csv', component: CSVComponent },
       { path: 'form', component: FormComponent},
     ])
   ],

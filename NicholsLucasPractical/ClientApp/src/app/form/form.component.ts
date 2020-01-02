@@ -1,4 +1,4 @@
-import { Component, OnInit, NgModule, Directive } from '@angular/core';
+import { Component, OnInit, NgModule, Directive, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -8,6 +8,9 @@ import { HttpClient } from '@angular/common/http';
 
 export class FormComponent {
   http = undefined;
+  baseUrl = undefined;
+  success: boolean = false;
+  failure: boolean = false;
   template = {
     SubmittingAUN: null,
     SchoolYearDate: null,
@@ -16,19 +19,28 @@ export class FormComponent {
     ACT16FundCategory: null
   };
 
-  constructor(http: HttpClient) {
+  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.http = http;
+    this.baseUrl = baseUrl;
   }
   onSubmit() {
     if (this.validate()) {
-      console.log("There was an issue with validation")
-      //tell user submission was unseccessful
+      //tell user submission was unsuccessful
+      this.failure = true
+      this.success = false
     }
     else {
       //tell user submission was successful
+      this.failure = false
+      this.success = true;
+      setTimeout(() => {
+        this.success = false
+      }, 3000)
 
       //send to server
-      this.http.post('')
+      this.http.post(this.baseUrl + 'form', this.template).subscribe(result => {
+        
+      }, error => console.error(error));
     }
     
   }
@@ -47,8 +59,14 @@ export class FormComponent {
     if (!temp) return true
 
     temp = this.template.ACT16FundCategory
-    if(!temp || temp >= 1 || temp <= 4) return true
-
+    if (!temp || temp < 1 || temp > 4) {
+      console.log("test");
+      return true
+    }
     return false
+  }
+
+  selectAllContent($event) {
+    $event.target.select();
   }
 }

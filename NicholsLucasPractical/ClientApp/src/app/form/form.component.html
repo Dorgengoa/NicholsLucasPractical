@@ -1,13 +1,10 @@
-
-<h1 id="tableLabel">Form</h1>
-
-<p>This component demonstrates fetching data from the server.</p>
-
+<h1 id="tableLabel">Student Fact Template</h1>
+<p>Enter Student Information for the Student Fact Template.</p>
 
 <form action="" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label for="submittingAUN">Submitting AUN:</label>
-    <input class="form-control" id="submittingAUN"
+    <input class="form-control" id="submittingAUN" (focus)="selectAllContent($event)"
            pattern="[0-9]{9}" type="number" required
            name="Submitting AUN" [(ngModel)]="template.SubmittingAUN"
            #submittingAUN="ngModel" ngModel
@@ -42,8 +39,8 @@
 
   <div class="form-group">
     <label for="PASecureID">PAsecureID:</label>
-    <input class="form-control" id="PASecureID"
-           pattern="[0-9]{9}" type="number" required
+    <input class="form-control" id="PASecureID" (focus)="selectAllContent($event)"
+           pattern="[0-9]{10}" type="number" required
            name="PASecureID" [(ngModel)]="template.PASecureID"
            #PASecureID="ngModel" ngModel
            placeholder="PA Secure ID" />
@@ -77,7 +74,7 @@
 
   <div class="form-group">
     <label for="ACT16FundCategory">ACT16 Fund Category:</label>
-    <input class="form-control" id="ACT16FundCategory"
+    <input class="form-control" id="ACT16FundCategory" (focus)="selectAllContent($event)"
            pattern="[1-4]{1}" type="number" required
            name="ACT16FundCategory" [(ngModel)]="template.ACT16FundCategory"
            #ACT16FundCategory="ngModel" ngModel
@@ -92,6 +89,9 @@
       </div>
     </div>
   </div>
-
+  <input type="submit" class="btn-primary btn" />
+  <br />
+  <div *ngIf="failure" class="alert alert-danger">There was an issue with the submission.</div>
+  <div *ngIf="success" class="alert alert-success">The submission was successful.</div>
 </form>
 
