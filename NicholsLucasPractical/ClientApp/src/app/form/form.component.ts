@@ -16,6 +16,8 @@ export class FormComponent {
     SchoolYearDate: null,
     PASecureID: null,
     ReportingDate: null,
+    Collection: "ACT16",
+    MeasureType: "COUNT",
     ACT16FundCategory: null
   };
 

@@ -1,0 +1,5 @@
+C:\Users\Lucas Nichols\source\repos\NicholsLucasPractical\PracticalDatabase\bin\Debug\PracticalDatabase.dacpac
+C:\Users\Lucas Nichols\source\repos\NicholsLucasPractical\PracticalDatabase\bin\Debug\PracticalDatabase.dll
+C:\Users\Lucas Nichols\source\repos\NicholsLucasPractical\PracticalDatabase\bin\Debug\PracticalDatabase.pdb
+C:\Users\Lucas Nichols\source\repos\NicholsLucasPractical\PracticalDatabase\obj\Debug\PracticalDatabase.dll
+C:\Users\Lucas Nichols\source\repos\NicholsLucasPractical\PracticalDatabase\obj\Debug\PracticalDatabase.pdb

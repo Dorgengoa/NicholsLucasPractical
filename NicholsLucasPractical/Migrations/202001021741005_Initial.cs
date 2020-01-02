@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
@@ -16,6 +16,8 @@
                         SchoolYearDate = c.DateTime(nullable: false),
                         PASecureID = c.Int(nullable: false),
                         ReportingDate = c.DateTime(nullable: false),
+                        Collection = c.String(),
+                        MeasureType = c.String(),
                         ACT16FundCategory = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ID);

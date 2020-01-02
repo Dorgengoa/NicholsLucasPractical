@@ -6,7 +6,7 @@ using System.Data.Entity;
 
 namespace NicholsLucasPractical
 {
-    public class StudentFactTempmlateContext : DbContext //db class using entity framework
+    public class StudentFactTemplateContext : DbContext //db class using entity framework
     {
         public DbSet<StudentFactTemplate> StudentFactTemplates { get; set; }
     }

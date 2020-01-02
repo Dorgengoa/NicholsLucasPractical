@@ -5,15 +5,14 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<NicholsLucasPractical.StudentFactTempmlateContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<NicholsLucasPractical.StudentFactTemplateContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "NicholsLucasPractical.StudentFactTempmlateContext";
         }
 
-        protected override void Seed(NicholsLucasPractical.StudentFactTempmlateContext context)
+        protected override void Seed(NicholsLucasPractical.StudentFactTemplateContext context)
         {
             //  This method will be called after migrating to the latest version.
 

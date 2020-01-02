@@ -7,20 +7,18 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { FormComponent } from './form/form.component';
 import { CSVComponent } from './csv/csv.component';
+import { DocComponent } from './doc/doc.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     FormComponent,
-    CSVComponent
+    CSVComponent,
+    DocComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,10 +26,9 @@ import { CSVComponent } from './csv/csv.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
       { path: 'csv', component: CSVComponent },
       { path: 'form', component: FormComponent},
+      { path: 'doc', component: DocComponent },
     ])
   ],
   providers: [],

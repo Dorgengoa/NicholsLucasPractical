@@ -21,8 +21,9 @@ namespace NicholsLucasPractical.Controllers
         public IActionResult ExportAction()
         {
 
-            using (var db = new StudentFactTempmlateContext())
+            using (var db = new StudentFactTemplateContext())
             {
+                //get data from database
                  var query = from x in db.StudentFactTemplates
                             select x;
 
@@ -32,7 +33,7 @@ namespace NicholsLucasPractical.Controllers
                     templateList.Add(item);
                 }
 
-
+                //convert to csv
                 MemoryStream memoryStream = new MemoryStream();
                 StreamWriter streamWriter = new StreamWriter(memoryStream, System.Text.Encoding.UTF8, 1024, true);
 

@@ -20,9 +20,9 @@ namespace NicholsLucasPractical
 
         public DateTime ReportingDate { get; set; }
 
-        public const string Collection = "ACT16";
+        public string Collection { get; set; }
 
-        public const string MeasureType = "COUNT";
+        public string MeasureType { get; set; }
 
         public int ACT16FundCategory { get; set; }
 
