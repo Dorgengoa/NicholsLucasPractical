@@ -11,6 +11,7 @@
 
 <h2>SQL script</h2>
 <p>I'm not entirely sure what was meant by "SQL deployment script", and also had difficulty testing the script I did make due to how all the sql connections and databases are already intigrated into my computer. If for some reason it fails to create the databse, try running the program and creating a student fact template. Entity should create a database itself. I'm assuming it will crash without the table so running the create table query on the newly created database should do the trick.</p>
+<p>The script is located in the PracticalDatabase folder.</p>
 
 <h2>Some general notes regarding this project:</h2>
 <p>The project doc said to use ASP.NET, however, for some reason I could only find ASP.NET Core when setting up Visual Studios. I'm assuming the difference is marginal and core is simply crossplatform.</p>
